@@ -1,5 +1,8 @@
 <?php
 $logo = ds_cero_asset("images/logo_white.svg");
+
+$instagram = get_field("instagram", "options");
+$linkedin = get_field("linkedin", "options");
 ?>
 
 <!DOCTYPE html>
@@ -22,17 +25,25 @@ $logo = ds_cero_asset("images/logo_white.svg");
 
 		<?php do_action('ds_cero_header'); ?>
 
-		<header class="fixed w-screen top-0 px-10 py-8 flex flex-row items-center justify-between z-30">
-			<a href="<?= get_home_url() ?>">
+		<header class="fixed w-screen top-0 px-10 py-8 flex flex-row items-center justify-between z-40">
+			<a class="z-40" href="<?= get_home_url() ?>">
 				<img src="<?= $logo ?>" class="w-28">
 			</a>
 
 
-			<button id="menu-button" class="flex flex-row items-center justify-center gap-2 duration-300 hover:gap-4">
-				<div id="square-1" class="aspect-[1/1] w-2 bg-white"></div>
-				<div id="square-2" class="aspect-[1/1] w-2 bg-white"></div>
-				<div id="square-3" class="aspect-[1/1] w-2 bg-white"></div>
+			<button id="menu-button" class="flex flex-row items-center justify-center gap-2 duration-300 hover:gap-4 z-40">
+				<div id="square-1" class="aspect-[1/1] w-2 bg-white duration-500"></div>
+				<div id="square-2" class="aspect-[1/1] w-2 bg-white duration-500"></div>
+				<div id="square-3" class="aspect-[1/1] w-2 bg-white duration-500"></div>
 			</button>
+
+
+			<div id="menu" class="w-screen h-screen z-30 fixed top-0 left-0 bg-black bg-opacity-60 backdrop-blur-lg not-open duration-500">
+				<div class="absolute bottom-10 left-10 text-start flex flex-row gap-10 w-full uppercase text-white">
+					<a href="<?= $instagram["url"] ?>" target="_blank">Instagram</a>
+					<a href="<?= $linkedin["url"] ?>" target="_blank">Linkedin</a>
+				</div>
+			</div>
 		</header>
 
 		<div id="content" class="site-content flex-grow">

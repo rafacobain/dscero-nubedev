@@ -54,3 +54,20 @@ article > *:not(.entry-content),
 html{
     @apply font-jost;
 }
+
+.not-open{
+    @apply translate-x-[100vw] -translate-y-[100vh];
+}
+
+.button-menu-close{
+    @apply gap-1 hover:gap-2;
+
+    #square-1, #square-3{
+        @apply translate-y-2;
+    }
+
+    #square-2{
+        @apply -translate-y-2;
+    }
+}
+

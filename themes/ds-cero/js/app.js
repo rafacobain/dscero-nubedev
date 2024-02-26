@@ -9,15 +9,53 @@
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _parallax__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./parallax */ "./resources/js/parallax.js");
+/* harmony import */ var _header_behaviour__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./header-behaviour */ "./resources/js/header-behaviour.js");
+/* harmony import */ var _parallax__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./parallax */ "./resources/js/parallax.js");
+
 
 
 // Navigation toggle
 window.addEventListener('load', function () {
+  (0,_header_behaviour__WEBPACK_IMPORTED_MODULE_0__.headerBehaviour)();
   try {
-    (0,_parallax__WEBPACK_IMPORTED_MODULE_0__.heroParallax)();
+    (0,_parallax__WEBPACK_IMPORTED_MODULE_1__.heroParallax)();
   } catch (_unused) {}
+  window.addEventListener("scroll", function () {
+    return _header_behaviour__WEBPACK_IMPORTED_MODULE_0__.headerBehaviour;
+  });
 });
+
+/***/ }),
+
+/***/ "./resources/js/header-behaviour.js":
+/*!******************************************!*\
+  !*** ./resources/js/header-behaviour.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   headerBehaviour: () => (/* binding */ headerBehaviour)
+/* harmony export */ });
+var headerBehaviour = function headerBehaviour() {
+  var header = document.querySelector("header");
+  var classToAdd = "scrolled";
+  var offset = window.pageYOffset;
+  if (offset > 1) {
+    header.classList.add(classToAdd);
+  } else {
+    header.classList.remove(classToAdd);
+  }
+  openMenu();
+};
+var openMenu = function openMenu() {
+  var boton = document.querySelector("#menu-button");
+  var div = document.querySelector("#menu");
+  boton.addEventListener("click", function () {
+    boton.classList.toggle("button-menu-close");
+    div.classList.toggle("not-open");
+  });
+};
 
 /***/ }),
 
