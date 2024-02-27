@@ -107,3 +107,13 @@ form{
         @apply w-full duration-300 bg-black bg-opacity-10 hover:bg-opacity-100 hover:text-white cursor-pointer;
     }
 }
+
+.invertido{
+    img.blanca{
+        @apply opacity-0;
+    }
+
+    .square{
+        @apply bg-black;
+    }
+}

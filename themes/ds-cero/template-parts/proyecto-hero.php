@@ -4,7 +4,7 @@ $titulo = $objeto->post_title;
 $imagenes = get_field("imagenes");
 ?>
 
-<section class="w-screen h-screen flex flex-col items-center justify-between gap-20 px-40 py-20">
+<section class="w-screen h-screen flex flex-col items-center justify-between gap-20 px-40 py-20 fondo-blanco">
     <div class="w-full h-full swiper-proyecto overflow-hidden">
         <div class="w-full h-full swiper-wrapper">
             <?php foreach ($imagenes as $i) : ?>

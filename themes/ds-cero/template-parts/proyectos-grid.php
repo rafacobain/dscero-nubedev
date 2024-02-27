@@ -8,7 +8,7 @@ $proyectos_query = new WP_Query($args);
 ?>
 
 
-<section class="px-32 pt-20 pb-40 min-h-screen grid grid-cols-3 gap-x-40 gap-y-52 w-screen">
+<section class="px-32 pt-20 pb-40 min-h-screen grid grid-cols-3 gap-x-40 gap-y-52 w-screen fondo-blanco">
     <?php
     if ($proyectos_query->have_posts()) :
         // Bucle para recorrer los posts encontrados

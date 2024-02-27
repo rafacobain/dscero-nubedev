@@ -1,5 +1,6 @@
 <?php
 $logo = ds_cero_asset("images/logo_white.svg");
+$logo_black = ds_cero_asset("images/logo_black.svg");
 
 $instagram = get_field("instagram", "options");
 $linkedin = get_field("linkedin", "options");
@@ -37,15 +38,17 @@ $contador = 0;
 		<?php do_action('ds_cero_header'); ?>
 
 		<header class="fixed w-screen top-0 px-10 py-8 flex flex-row items-center justify-between z-40">
-			<a class="z-40" href="<?= get_home_url() ?>">
-				<img src="<?= $logo ?>" class="w-28">
+			<a class="z-40 relative" href="<?= get_home_url() ?>">
+				<img src="<?= $logo ?>" class="blanca w-28 duration-300">
+				
+				<img src="<?= $logo_black ?>" class="w-28 absolute top-0 left-0 -z-10">
 			</a>
 
 
 			<button id="menu-button" class="flex flex-row items-center justify-center gap-2 duration-300 hover:gap-4 z-40">
-				<div id="square-1" class="aspect-[1/1] w-2 bg-white duration-500"></div>
-				<div id="square-2" class="aspect-[1/1] w-2 bg-white duration-500"></div>
-				<div id="square-3" class="aspect-[1/1] w-2 bg-white duration-500"></div>
+				<div id="square-1" class="square aspect-[1/1] w-2 bg-white duration-500"></div>
+				<div id="square-2" class="square aspect-[1/1] w-2 bg-white duration-500"></div>
+				<div id="square-3" class="square aspect-[1/1] w-2 bg-white duration-500"></div>
 			</button>
 
 

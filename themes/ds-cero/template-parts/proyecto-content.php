@@ -4,7 +4,7 @@ $caracteristicas = get_field("caracteristicas", $objeto->ID);
 $descripcion = get_field("descripcion", $objeto->ID);
 ?>
 
-<section class="w-full flex flex-row items-start justify-center gap-20 px-40 pt-4 pb-20">
+<section class="w-full flex flex-row items-start justify-center gap-20 px-40 pt-4 pb-20 fondo-blanco">
     <div class="w-1/4 flex flex-col gap-10">
         <?php foreach ($caracteristicas as $c) : ?>
             <div class="w-full gap-10 flex flex-row justify-center">

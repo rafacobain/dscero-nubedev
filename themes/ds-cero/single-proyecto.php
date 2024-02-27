@@ -1,6 +1,6 @@
 <?php
 
-get_header("black");
+get_header();
 
 get_template_part("template-parts/proyecto", "hero");
 

@@ -25,18 +25,23 @@ window.addEventListener('load', function () {
     (0,_parallax__WEBPACK_IMPORTED_MODULE_2__.heroParallax)();
   } catch (_unused) {}
   try {
-    (0,_gsap__WEBPACK_IMPORTED_MODULE_0__.animateText)('#homehero-texto');
-    (0,_gsap__WEBPACK_IMPORTED_MODULE_0__.animateText)('#homeintro-texto');
+    (0,_gsap__WEBPACK_IMPORTED_MODULE_0__.addInvertedClass)();
   } catch (_unused2) {}
   try {
+    //home
+    (0,_gsap__WEBPACK_IMPORTED_MODULE_0__.animateText)('#homehero-texto');
+    (0,_gsap__WEBPACK_IMPORTED_MODULE_0__.animateText)('#homeintro-texto');
+  } catch (_unused3) {}
+  try {
+    //sobre nosotros
     (0,_gsap__WEBPACK_IMPORTED_MODULE_0__.animateShowFade)('#sobre-text-1');
     (0,_gsap__WEBPACK_IMPORTED_MODULE_0__.animateShowFade)('#sobre-text-2');
     (0,_gsap__WEBPACK_IMPORTED_MODULE_0__.animateImageBlock)('#sobre-imageblock-1', 'right');
     (0,_gsap__WEBPACK_IMPORTED_MODULE_0__.animateImageBlock)('#sobre-imageblock-2', 'left');
-  } catch (_unused3) {}
+  } catch (_unused4) {}
   try {
     (0,_swiper__WEBPACK_IMPORTED_MODULE_3__.swiperProyecto)();
-  } catch (_unused4) {}
+  } catch (_unused5) {}
   window.addEventListener("scroll", function () {
     return _header_behaviour__WEBPACK_IMPORTED_MODULE_1__.headerBehaviour;
   });
@@ -52,6 +57,7 @@ window.addEventListener('load', function () {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   addInvertedClass: () => (/* binding */ addInvertedClass),
 /* harmony export */   animateImageBlock: () => (/* binding */ animateImageBlock),
 /* harmony export */   animateShowFade: () => (/* binding */ animateShowFade),
 /* harmony export */   animateText: () => (/* binding */ animateText)
@@ -143,6 +149,47 @@ var animateImageBlock = function animateImageBlock(id, from) {
     // Hace cada letra visible
     duration: 1
   });
+};
+var addInvertedClass = function addInvertedClass() {
+  var header = document.querySelector('header');
+  var divsWithBgWhite = document.querySelectorAll('.fondo-blanco');
+  divsWithBgWhite.forEach(function (div) {
+    gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger.create({
+      trigger: div,
+      start: "top top",
+      // Empieza la animación cuando el div 'bg-white' entra en el viewport
+      end: "bottom top",
+      // Termina la animación cuando el div 'bg-white' sale del viewport
+      onEnter: function onEnter() {
+        return animateInverted();
+      },
+      // Llama a animateInverted cuando el div entra
+      onLeave: function onLeave() {
+        return revertInverted();
+      },
+      // Llama a revertInverted cuando el div sale
+      onEnterBack: function onEnterBack() {
+        return animateInverted();
+      },
+      // Llama a animateInverted cuando el div entra de nuevo por scroll inverso
+      onLeaveBack: function onLeaveBack() {
+        return revertInverted();
+      } // Llama a revertInverted cuando el div sale por scroll inverso
+      // Opciones adicionales como markers:true pueden ayudarte a depurar
+    });
+  });
+
+  // Función para animar el header al estado 'invertido'
+  function animateInverted() {
+    // Añade la clase 'invertido' o anima el header directamente aquí
+    header.classList.add('invertido'); // O usa gsap.to() para animar propiedades
+  }
+
+  // Función para revertir la animación del header
+  function revertInverted() {
+    // Quita la clase 'invertido' o revierte la animación del header aquí
+    header.classList.remove('invertido'); // O usa gsap.to() para revertir propiedades
+  }
 };
 
 /***/ }),

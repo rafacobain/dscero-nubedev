@@ -30,7 +30,7 @@ export const animateText = (id) => {
     });
 }
 
-export const animateShowFade = (id) =>{
+export const animateShowFade = (id) => {
     // Crea una timeline de GSAP para la animación
     const tl = gsap.timeline({
         // Opcional: Integra ScrollTrigger si quieres que la animación se active al hacer scroll
@@ -50,7 +50,7 @@ export const animateShowFade = (id) =>{
     });
 }
 
-export const animateImageBlock = (id, from) =>{
+export const animateImageBlock = (id, from) => {
     // Crea una timeline de GSAP para la animación
     const tl = gsap.timeline({
         // Opcional: Integra ScrollTrigger si quieres que la animación se active al hacer scroll
@@ -61,10 +61,10 @@ export const animateImageBlock = (id, from) =>{
         }
     });
 
-    if(from == 'right'){
-        gsap.set(id, {translateX: '100vw'})
-    }   else{
-        gsap.set(id, {translateX: '-100vw'})
+    if (from == 'right') {
+        gsap.set(id, { translateX: '100vw' })
+    } else {
+        gsap.set(id, { translateX: '-100vw' })
     }
 
     tl.to(id, {
@@ -72,3 +72,34 @@ export const animateImageBlock = (id, from) =>{
         duration: 1
     });
 }
+
+
+export const addInvertedClass = () => {
+    const header = document.querySelector('header');
+    const divsWithBgWhite = document.querySelectorAll('.fondo-blanco');
+
+    divsWithBgWhite.forEach(div => {
+        ScrollTrigger.create({
+            trigger: div,
+            start: "top top", // Empieza la animación cuando el div 'bg-white' entra en el viewport
+            end: "bottom top", // Termina la animación cuando el div 'bg-white' sale del viewport
+            onEnter: () => animateInverted(), // Llama a animateInverted cuando el div entra
+            onLeave: () => revertInverted(), // Llama a revertInverted cuando el div sale
+            onEnterBack: () => animateInverted(), // Llama a animateInverted cuando el div entra de nuevo por scroll inverso
+            onLeaveBack: () => revertInverted(), // Llama a revertInverted cuando el div sale por scroll inverso
+            // Opciones adicionales como markers:true pueden ayudarte a depurar
+        });
+    });
+
+    // Función para animar el header al estado 'invertido'
+    function animateInverted() {
+        // Añade la clase 'invertido' o anima el header directamente aquí
+        header.classList.add('invertido'); // O usa gsap.to() para animar propiedades
+    }
+
+    // Función para revertir la animación del header
+    function revertInverted() {
+        // Quita la clase 'invertido' o revierte la animación del header aquí
+        header.classList.remove('invertido'); // O usa gsap.to() para revertir propiedades
+    }
+};
