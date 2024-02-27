@@ -86,3 +86,8 @@ html{
         @apply font-agencyfb;
     }
 }
+
+.swiper-pagination-bullet{
+    background: black !important;
+    border-radius: 0 !important;
+}
