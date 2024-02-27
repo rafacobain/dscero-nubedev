@@ -3,6 +3,17 @@ $logo = ds_cero_asset("images/logo_white.svg");
 
 $instagram = get_field("instagram", "options");
 $linkedin = get_field("linkedin", "options");
+
+
+$menu_items = wp_get_nav_menu_items('menu-1');
+
+$imagenes_menu = [
+	get_field("imagen_sobre", "options")["url"],
+	get_field("imagen_proyectos", "options")["url"],
+	get_field("imagen_contacto", "options")["url"],
+];
+
+$contador = 0;
 ?>
 
 <!DOCTYPE html>
@@ -38,7 +49,22 @@ $linkedin = get_field("linkedin", "options");
 			</button>
 
 
-			<div id="menu" class="w-screen h-screen z-30 fixed top-0 left-0 bg-black bg-opacity-60 backdrop-blur-lg not-open duration-500">
+			<div id="menu" class="w-screen h-screen z-30 fixed top-0 left-0 bg-black bg-opacity-60 backdrop-blur-lg not-open duration-500 p-40">
+				<div class="w-full h-full flex flex-row items-center justify-between">
+					<?php foreach ($menu_items as $m) : ?>
+						<a href="<?= get_permalink($m) ?>" class="menu-a border-[1px] border-white w-1/4 aspect-[1/1] flex items-center justify-center relative text-white duration-300">
+							<div class="menu-a-image w-3/4 aspect-[1/1] absolute top-0 right-0 -translate-y-20 translate-x-20 z-40 bg-center bg-cover duration-700 opacity-0" style="background-image:url('<?= $imagenes_menu[$contador] ?>')"></div>
+
+							<div class="menu-a-border border-[1px] border-white border-opacity-70 w-3/5 h-3/5 z-50 absolute duration-300 opacity-0"></div>
+
+							<div class="menu-a-title absolute bottom-4 right-8 uppercase text-lg duration-300"><?= $m->post_title ?></div>
+
+						</a>
+
+						<?php $contador++; ?>
+					<?php endforeach; ?>
+				</div>
+
 				<div class="absolute bottom-10 left-10 text-start flex flex-row gap-10 w-full uppercase text-white">
 					<a href="<?= $instagram["url"] ?>" target="_blank">Instagram</a>
 					<a href="<?= $linkedin["url"] ?>" target="_blank">Linkedin</a>

@@ -71,3 +71,18 @@ html{
     }
 }
 
+.menu-a:hover{
+    @apply -translate-y-2;
+
+    .menu-a-image{
+        @apply opacity-100;
+    }
+
+    .menu-a-border{
+        @apply opacity-100;
+    }
+
+    .menu-a-title{
+        @apply font-agencyfb;
+    }
+}
