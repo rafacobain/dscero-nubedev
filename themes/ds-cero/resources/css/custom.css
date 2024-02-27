@@ -91,3 +91,19 @@ html{
     background: black !important;
     border-radius: 0 !important;
 }
+
+form{
+    @apply flex flex-col gap-4;
+
+    input, textarea{
+        @apply p-2 border-[1px] border-black w-full;
+    }
+
+    input[type="checkbox"]{
+        @apply w-fit;
+    }
+
+    input[type="submit"]{
+        @apply w-full duration-300 bg-black bg-opacity-10 hover:bg-opacity-100 hover:text-white cursor-pointer;
+    }
+}

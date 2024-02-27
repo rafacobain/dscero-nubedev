@@ -26,7 +26,7 @@ $proyectos_query = new WP_Query($args);
 
 <?php do_action('ds_cero_content_after'); ?>
 
-<footer id="colophon" class="site-footer bg-ds-grey w-screen min-h-screen flex flex-col items-center justify-center gap-10 text-white" role="contentinfo">
+<footer id="colophon" class="site-footer bg-ds-grey w-screen min-h-screen flex flex-col items-center justify-center gap-10 text-white py-20" role="contentinfo">
 	<?php do_action('ds_cero_footer'); ?>
 
 	<img src="<?= $logo ?>" class="w-1/12">
@@ -64,9 +64,9 @@ $proyectos_query = new WP_Query($args);
 			<a href="<?= __("/contacto/", "dscero") ?>"><?= __("CONTACTO", "dscero") ?></a>
 		</div>
 		<div class="text-start flex flex-col gap-4 w-full uppercase">
-			<a href="<?= $correo["title"] ?>"><?= $correo["title"] ?></a>
-			<a href="<?= $fijo["title"] ?>">T.: <?= $fijo["title"] ?></a>
-			<a href="<?= $movil["title"] ?>">M.: <?= $movil["title"] ?></a>
+			<a href="<?= $correo["url"] ?>"><?= $correo["title"] ?></a>
+			<a href="<?= $fijo["url"] ?>">T.: <?= $fijo["title"] ?></a>
+			<a href="<?= $movil["url"] ?>">M.: <?= $movil["title"] ?></a>
 		</div>
 	</div>
 
