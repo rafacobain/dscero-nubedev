@@ -37,6 +37,9 @@
         max-width: 1440px
     }
 }
+.visible {
+    visibility: visible
+}
 .fixed {
     position: fixed
 }
@@ -356,14 +359,14 @@
     --tw-bg-opacity: 1;
     background-color: rgb(255 255 255 / var(--tw-bg-opacity))
 }
+.bg-opacity-10 {
+    --tw-bg-opacity: 0.1
+}
 .bg-opacity-40 {
     --tw-bg-opacity: 0.4
 }
 .bg-opacity-60 {
     --tw-bg-opacity: 0.6
-}
-.bg-opacity-10 {
-    --tw-bg-opacity: 0.1
 }
 .bg-cover {
     background-size: cover
@@ -609,14 +612,14 @@ body {
     --tw-bg-opacity: 1;
     background-color: rgb(255 255 255 / var(--tw-bg-opacity))
 }
+.hover\:bg-opacity-100:hover {
+    --tw-bg-opacity: 1
+}
 .hover\:bg-opacity-50:hover {
     --tw-bg-opacity: 0.5
 }
 .hover\:bg-opacity-70:hover {
     --tw-bg-opacity: 0.7
-}
-.hover\:bg-opacity-100:hover {
-    --tw-bg-opacity: 1
 }
 .hover\:text-black:hover {
     --tw-text-opacity: 1;

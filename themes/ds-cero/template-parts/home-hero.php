@@ -11,7 +11,7 @@ $boton_hero = get_field("boton_hero");
     <div class="aspect-[1/1] p-20 bg-black bg-opacity-60 w-1/3 text-white duration-300 hover:bg-opacity-70 hover:backdrop-blur-xl hover:shadow-xl">
         <div class="border-[1px] border-white w-full h-full p-10 pl-20 flex flex-col items-end justify-center gap-10 text-end">
             <p class="font-agencyfb text-3xl uppercase font-bold"><?= $titulo_hero ?></p>
-            <div class="text-base uppercase"><?= $texto_hero ?></div>
+            <div id="homehero-texto" class="text-base uppercase"><?= $texto_hero ?></div>
             <a class="mt-auto py-2 px-4 border-[1px] border-white uppercase duration-300 hover:bg-white hover:text-black" href="<?= $boton_hero["url"] ?>"><?= $boton_hero["title"] ?></a>
         </div>
     </div>
