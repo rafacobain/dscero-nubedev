@@ -29,10 +29,10 @@ $proyectos_query = new WP_Query($args);
 
 <?php do_action('ds_cero_content_after'); ?>
 
-<footer id="colophon" class="site-footer bg-ds-grey w-screen min-h-screen flex flex-col items-center justify-center gap-10 text-white py-20" role="contentinfo">
+<footer id="colophon" class="site-footer bg-ds-grey w-screen lg:min-h-screen flex flex-col items-center justify-center gap-10 text-white py-10 lg:py-20 text-xs xl:text-sm 2xl:text-base" role="contentinfo">
 	<?php do_action('ds_cero_footer'); ?>
 
-	<img src="<?= $logo ?>" class="w-1/12">
+	<img src="<?= $logo ?>" class="w-1/6 sm:w-1/12">
 
 	<div class="w-full gap-10 flex flex-row justify-center">
 		<div class="text-end font-agencyfb w-full text-xl">

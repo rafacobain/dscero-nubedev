@@ -207,17 +207,17 @@ var precarga = function precarga() {
   if (porcentajeElement != null) {
     window.scrollTo(0, 0);
     document.body.style.overflow = 'hidden';
-  }
 
-  // Incrementa el porcentaje de 0 a 100
-  var interval = setInterval(function () {
-    porcentaje++;
-    porcentajeElement.textContent = porcentaje;
-    if (porcentaje >= 100) {
-      clearInterval(interval); // Detiene el intervalo una vez que alcanza 100
-      animarDivHomeHero(); // Inicia la animación GSAP
-    }
-  }, 20);
+    // Incrementa el porcentaje de 0 a 100
+    var interval = setInterval(function () {
+      porcentaje++;
+      porcentajeElement.textContent = porcentaje;
+      if (porcentaje >= 100) {
+        clearInterval(interval); // Detiene el intervalo una vez que alcanza 100
+        animarDivHomeHero(); // Inicia la animación GSAP
+      }
+    }, 20);
+  }
 };
 
 // Función para animar #div-home-hero con GSAP
