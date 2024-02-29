@@ -1,7 +1,8 @@
-import { addInvertedClass, animateImageBlock, animateShowFade, animateText } from "./gsap";
+import { addInvertedClass, animateImageBlock, animateShowFade, animateText, precarga } from "./gsap";
 import { headerBehaviour } from "./header-behaviour";
 import { heroParallax } from "./parallax";
 import { swiperProyecto } from "./swiper";
+import { homePortfolio } from "./homePortfolio";
 
 // Navigation toggle
 window.addEventListener('load', function () {
@@ -12,6 +13,14 @@ window.addEventListener('load', function () {
         heroParallax();
     } catch { }
 
+    try{
+        precarga();
+    } catch {}
+
+    try {
+        homePortfolio();
+    } catch { }
+
     try {
         addInvertedClass();
     } catch { }
@@ -19,6 +28,7 @@ window.addEventListener('load', function () {
     try {
         //home
         animateText('#homehero-texto');
+        animateText('#homehero-texto2');
         animateText('#homeintro-texto');
     } catch { }
 

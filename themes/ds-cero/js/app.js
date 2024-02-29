@@ -13,6 +13,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _header_behaviour__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./header-behaviour */ "./resources/js/header-behaviour.js");
 /* harmony import */ var _parallax__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./parallax */ "./resources/js/parallax.js");
 /* harmony import */ var _swiper__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./swiper */ "./resources/js/swiper.js");
+/* harmony import */ var _homePortfolio__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./homePortfolio */ "./resources/js/homePortfolio.js");
+
 
 
 
@@ -25,23 +27,30 @@ window.addEventListener('load', function () {
     (0,_parallax__WEBPACK_IMPORTED_MODULE_2__.heroParallax)();
   } catch (_unused) {}
   try {
-    (0,_gsap__WEBPACK_IMPORTED_MODULE_0__.addInvertedClass)();
+    (0,_gsap__WEBPACK_IMPORTED_MODULE_0__.precarga)();
   } catch (_unused2) {}
+  try {
+    (0,_homePortfolio__WEBPACK_IMPORTED_MODULE_4__.homePortfolio)();
+  } catch (_unused3) {}
+  try {
+    (0,_gsap__WEBPACK_IMPORTED_MODULE_0__.addInvertedClass)();
+  } catch (_unused4) {}
   try {
     //home
     (0,_gsap__WEBPACK_IMPORTED_MODULE_0__.animateText)('#homehero-texto');
+    (0,_gsap__WEBPACK_IMPORTED_MODULE_0__.animateText)('#homehero-texto2');
     (0,_gsap__WEBPACK_IMPORTED_MODULE_0__.animateText)('#homeintro-texto');
-  } catch (_unused3) {}
+  } catch (_unused5) {}
   try {
     //sobre nosotros
     (0,_gsap__WEBPACK_IMPORTED_MODULE_0__.animateShowFade)('#sobre-text-1');
     (0,_gsap__WEBPACK_IMPORTED_MODULE_0__.animateShowFade)('#sobre-text-2');
     (0,_gsap__WEBPACK_IMPORTED_MODULE_0__.animateImageBlock)('#sobre-imageblock-1', 'right');
     (0,_gsap__WEBPACK_IMPORTED_MODULE_0__.animateImageBlock)('#sobre-imageblock-2', 'left');
-  } catch (_unused4) {}
+  } catch (_unused6) {}
   try {
     (0,_swiper__WEBPACK_IMPORTED_MODULE_3__.swiperProyecto)();
-  } catch (_unused5) {}
+  } catch (_unused7) {}
   window.addEventListener("scroll", function () {
     return _header_behaviour__WEBPACK_IMPORTED_MODULE_1__.headerBehaviour;
   });
@@ -60,7 +69,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   addInvertedClass: () => (/* binding */ addInvertedClass),
 /* harmony export */   animateImageBlock: () => (/* binding */ animateImageBlock),
 /* harmony export */   animateShowFade: () => (/* binding */ animateShowFade),
-/* harmony export */   animateText: () => (/* binding */ animateText)
+/* harmony export */   animateText: () => (/* binding */ animateText),
+/* harmony export */   precarga: () => (/* binding */ precarga)
 /* harmony export */ });
 /* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
 /* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
@@ -160,6 +170,7 @@ var addInvertedClass = function addInvertedClass() {
       // Empieza la animación cuando el div 'bg-white' entra en el viewport
       end: "bottom top",
       // Termina la animación cuando el div 'bg-white' sale del viewport
+      markers: false,
       onEnter: function onEnter() {
         return animateInverted();
       },
@@ -175,7 +186,6 @@ var addInvertedClass = function addInvertedClass() {
       onLeaveBack: function onLeaveBack() {
         return revertInverted();
       } // Llama a revertInverted cuando el div sale por scroll inverso
-      // Opciones adicionales como markers:true pueden ayudarte a depurar
     });
   });
 
@@ -190,6 +200,42 @@ var addInvertedClass = function addInvertedClass() {
     // Quita la clase 'invertido' o revierte la animación del header aquí
     header.classList.remove('invertido'); // O usa gsap.to() para revertir propiedades
   }
+};
+var precarga = function precarga() {
+  var porcentaje = 0;
+  var porcentajeElement = document.getElementById('porcentaje');
+
+  // Deshabilitar scroll al iniciar la precarga
+  window.scrollTo(0, 0);
+  document.body.style.overflow = 'hidden';
+
+  // Incrementa el porcentaje de 0 a 100
+  var interval = setInterval(function () {
+    porcentaje++;
+    porcentajeElement.textContent = porcentaje;
+    if (porcentaje >= 100) {
+      clearInterval(interval); // Detiene el intervalo una vez que alcanza 100
+      animarDivHomeHero(); // Inicia la animación GSAP
+    }
+  }, 55);
+};
+
+// Función para animar #div-home-hero con GSAP
+var animarDivHomeHero = function animarDivHomeHero() {
+  var tl = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
+    onComplete: function onComplete() {
+      // Cambia #div-home-hero a display: none una vez que la opacidad llega a 0
+      gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.set("#div-home-hero", {
+        display: "none"
+      });
+      // Permitir scroll después de completar la animación
+      document.body.style.overflow = 'auto';
+    }
+  });
+  tl.to("#div-home-hero", {
+    duration: 1,
+    opacity: 0
+  }); // Ajusta la duración según sea necesario
 };
 
 /***/ }),
@@ -226,6 +272,46 @@ var openMenu = function openMenu() {
 
 /***/ }),
 
+/***/ "./resources/js/homePortfolio.js":
+/*!***************************************!*\
+  !*** ./resources/js/homePortfolio.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   homePortfolio: () => (/* binding */ homePortfolio)
+/* harmony export */ });
+var homePortfolio = function homePortfolio() {
+  var botones = document.querySelectorAll(".btn-port");
+  var botonBack = document.querySelector("#portfolio-back");
+  var div = document.querySelector("#portfolio-div");
+  var titlePort = document.querySelector("#title-port");
+  var textPort = document.querySelector("#text-port");
+  var linkPort = document.querySelector("#link-port");
+  botones.forEach(function (b) {
+    b.addEventListener("click", function () {
+      botones.forEach(function (x) {
+        x.classList.remove("boton-portfolio");
+      });
+      b.classList.add("boton-portfolio-big");
+      titlePort.innerHTML = b.getAttribute("data-title");
+      textPort.innerHTML = b.getAttribute("data-subtitle");
+      linkPort.href = b.getAttribute("data-link");
+      div.classList.add("portfolio-active");
+    });
+  });
+  botonBack.addEventListener("click", function () {
+    botones.forEach(function (b) {
+      b.classList.remove("boton-portfolio-big");
+      b.classList.add("boton-portfolio");
+    });
+    div.classList.remove("portfolio-active");
+  });
+};
+
+/***/ }),
+
 /***/ "./resources/js/parallax.js":
 /*!**********************************!*\
   !*** ./resources/js/parallax.js ***!
@@ -242,7 +328,7 @@ var heroParallax = function heroParallax() {
 
   // Añade un listener para el evento de movimiento del ratón sobre la sección
   section.addEventListener('mousemove', function (e) {
-    var sensibilidad = -50;
+    var sensibilidad = -10;
     var x = e.clientX - this.offsetLeft;
     var y = e.clientY - this.offsetTop;
     var width = this.offsetWidth;

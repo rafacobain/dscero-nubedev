@@ -45,7 +45,7 @@ $contador = 0;
 			</a>
 
 
-			<button id="menu-button" class="flex flex-row items-center justify-center gap-2 duration-300 hover:gap-4 z-40">
+			<button id="menu-button" class="flex flex-row items-center justify-center gap-2 duration-300 hover:gap-3 z-40">
 				<div id="square-1" class="square aspect-[1/1] w-2 bg-white duration-500"></div>
 				<div id="square-2" class="square aspect-[1/1] w-2 bg-white duration-500"></div>
 				<div id="square-3" class="square aspect-[1/1] w-2 bg-white duration-500"></div>
@@ -69,8 +69,8 @@ $contador = 0;
 				</div>
 
 				<div class="absolute bottom-10 left-10 text-start flex flex-row gap-10 w-full uppercase text-white">
-					<a href="<?= $instagram["url"] ?>" target="_blank">Instagram</a>
-					<a href="<?= $linkedin["url"] ?>" target="_blank">Linkedin</a>
+					<a class="duration-300 hover:font-agencyfb" href="<?= $instagram["url"] ?>" target="_blank">Instagram</a>
+					<a class="duration-300 hover:font-agencyfb" href="<?= $linkedin["url"] ?>" target="_blank">Linkedin</a>
 				</div>
 			</div>
 		</header>

@@ -4,7 +4,7 @@ export const heroParallax = () => {
 
     // Añade un listener para el evento de movimiento del ratón sobre la sección
     section.addEventListener('mousemove', function (e) {
-        const sensibilidad = -50;
+        const sensibilidad = -10;
 
         const x = e.clientX - this.offsetLeft;
         const y = e.clientY - this.offsetTop;

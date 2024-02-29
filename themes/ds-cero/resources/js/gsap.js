@@ -83,13 +83,14 @@ export const addInvertedClass = () => {
             trigger: div,
             start: "top top", // Empieza la animación cuando el div 'bg-white' entra en el viewport
             end: "bottom top", // Termina la animación cuando el div 'bg-white' sale del viewport
+            markers: false,
             onEnter: () => animateInverted(), // Llama a animateInverted cuando el div entra
             onLeave: () => revertInverted(), // Llama a revertInverted cuando el div sale
             onEnterBack: () => animateInverted(), // Llama a animateInverted cuando el div entra de nuevo por scroll inverso
             onLeaveBack: () => revertInverted(), // Llama a revertInverted cuando el div sale por scroll inverso
-            // Opciones adicionales como markers:true pueden ayudarte a depurar
         });
     });
+
 
     // Función para animar el header al estado 'invertido'
     function animateInverted() {
@@ -102,4 +103,39 @@ export const addInvertedClass = () => {
         // Quita la clase 'invertido' o revierte la animación del header aquí
         header.classList.remove('invertido'); // O usa gsap.to() para revertir propiedades
     }
+};
+
+export const precarga = () => {
+    let porcentaje = 0;
+    const porcentajeElement = document.getElementById('porcentaje');
+
+    // Deshabilitar scroll al iniciar la precarga
+    window.scrollTo(0, 0);
+
+    document.body.style.overflow = 'hidden';
+
+    // Incrementa el porcentaje de 0 a 100
+    const interval = setInterval(() => {
+        porcentaje++;
+        porcentajeElement.textContent = porcentaje;
+
+        if (porcentaje >= 100) {
+            clearInterval(interval); // Detiene el intervalo una vez que alcanza 100
+            animarDivHomeHero(); // Inicia la animación GSAP
+        }
+    }, 55);
+};
+
+// Función para animar #div-home-hero con GSAP
+const animarDivHomeHero = () => {
+    const tl = gsap.timeline({
+        onComplete: () => {
+            // Cambia #div-home-hero a display: none una vez que la opacidad llega a 0
+            gsap.set("#div-home-hero", {display: "none"});
+            // Permitir scroll después de completar la animación
+            document.body.style.overflow = 'auto';
+        }
+    });
+
+    tl.to("#div-home-hero", {duration: 1, opacity: 0}); // Ajusta la duración según sea necesario
 };

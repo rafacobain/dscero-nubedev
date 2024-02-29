@@ -4,8 +4,8 @@ $titulo = $objeto->post_title;
 $imagenes = get_field("imagenes");
 ?>
 
-<section class="w-screen h-screen flex flex-col items-center justify-between gap-20 px-40 py-20 fondo-blanco">
-    <div class="w-full h-full swiper-proyecto overflow-hidden">
+<section class="w-screen h-screen flex flex-col items-center justify-between">
+    <div class="w-full h-4/5 swiper-proyecto overflow-hidden">
         <div class="w-full h-full swiper-wrapper">
             <?php foreach ($imagenes as $i) : ?>
                 <div class="swiper-slide bg-center bg-cover w-full h-full" style="background-image:url('<?= $i["imagen"]["url"] ?>')">
@@ -15,7 +15,7 @@ $imagenes = get_field("imagenes");
         </div>
     </div>
 
-    <div class="w-full flex flex-row items-center justify-between">
+    <div class="w-full h-1/5 flex flex-row items-center justify-between px-40">
         <h1 class="text-start text-5xl font-agencyfb font-semibold"><?= $objeto->post_title ?></h1>
 
         <div class="flex flex-row items-center justify-center gap-10">

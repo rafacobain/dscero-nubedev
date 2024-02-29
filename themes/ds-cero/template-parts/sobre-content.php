@@ -30,8 +30,8 @@ $boton_enlace = get_field("boton_enlace");
         <div id="sobre-text-2" class="w-1/2 flex flex-col gap-10 text-xl"><?= $texto_2 ?></div>
     </div>
 
-    <div class="aspect-[1/1] p-20 bg-black bg-opacity-60 w-1/3 text-white duration-300 hover:bg-opacity-70 hover:backdrop-blur-xl hover:shadow-xl mt-10">
-        <div class="border-[1px] border-white w-full h-full p-10 pl-20 flex flex-col items-end justify-center gap-10 text-end">
+    <div class="aspect-[1/1] p-8 bg-black bg-opacity-60 w-1/4 text-white duration-300 hover:bg-opacity-70 hover:backdrop-blur-xl hover:shadow-xl mt-10">
+        <div class="border-[1px] border-white w-full h-full p-8 pl-14 flex flex-col items-end justify-center gap-10 text-end">
             <p class="font-agencyfb text-3xl uppercase font-bold"><?= $titulo_enlace ?></p>
             <div class="text-base uppercase"><?= $texto_enlace ?></div>
             <a class="mt-auto py-2 px-4 border-[1px] border-white uppercase duration-300 hover:bg-white hover:text-black" href="<?= $boton_enlace["url"] ?>"><?= $boton_enlace["title"] ?></a>
