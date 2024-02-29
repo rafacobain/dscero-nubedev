@@ -204,10 +204,10 @@ var addInvertedClass = function addInvertedClass() {
 var precarga = function precarga() {
   var porcentaje = 0;
   var porcentajeElement = document.getElementById('porcentaje');
-
-  // Deshabilitar scroll al iniciar la precarga
-  window.scrollTo(0, 0);
-  document.body.style.overflow = 'hidden';
+  if (porcentajeElement != null) {
+    window.scrollTo(0, 0);
+    document.body.style.overflow = 'hidden';
+  }
 
   // Incrementa el porcentaje de 0 a 100
   var interval = setInterval(function () {
@@ -217,7 +217,7 @@ var precarga = function precarga() {
       clearInterval(interval); // Detiene el intervalo una vez que alcanza 100
       animarDivHomeHero(); // Inicia la animación GSAP
     }
-  }, 55);
+  }, 20);
 };
 
 // Función para animar #div-home-hero con GSAP
