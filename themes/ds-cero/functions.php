@@ -9,6 +9,7 @@ function ds_cero_setup() {
 	register_nav_menus(
 		array(
 			'primary' => __( 'Primary Menu', 'tailpress' ),
+			'legal' => __( 'Legal Menu', 'tailpress' ),
 		)
 	);
 

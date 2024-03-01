@@ -52,7 +52,7 @@ window.addEventListener('load', function () {
     (0,_swiper__WEBPACK_IMPORTED_MODULE_3__.swiperProyecto)();
   } catch (_unused7) {}
   window.addEventListener("scroll", function () {
-    return _header_behaviour__WEBPACK_IMPORTED_MODULE_1__.headerBehaviour;
+    return (0,_header_behaviour__WEBPACK_IMPORTED_MODULE_1__.headerBehaviour)();
   });
 });
 

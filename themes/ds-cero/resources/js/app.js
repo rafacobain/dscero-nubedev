@@ -44,5 +44,5 @@ window.addEventListener('load', function () {
         swiperProyecto();
     } catch { }
 
-    window.addEventListener("scroll", () => headerBehaviour);
+    window.addEventListener("scroll", () => headerBehaviour());
 });

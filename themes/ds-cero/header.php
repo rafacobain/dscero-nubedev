@@ -37,11 +37,11 @@ $contador = 0;
 
 		<?php do_action('ds_cero_header'); ?>
 
-		<header class="fixed w-screen top-0 px-10 py-8 flex flex-row items-center justify-between z-40">
+		<header class="fixed w-screen top-0 px-10 py-4 sm:py-8 flex flex-row items-center justify-between z-40 duration-300">
 			<a class="z-40 relative" href="<?= get_home_url() ?>">
-				<img src="<?= $logo ?>" class="blanca w-28 duration-300">
+				<img src="<?= $logo ?>" class="blanca w-20 xl:w-28 duration-300">
 				
-				<img src="<?= $logo_black ?>" class="w-28 absolute top-0 left-0 -z-10">
+				<img src="<?= $logo_black ?>" class="w-20 xl:w-28 absolute top-0 left-0 -z-10">
 			</a>
 
 
@@ -52,15 +52,15 @@ $contador = 0;
 			</button>
 
 
-			<div id="menu" class="w-screen h-screen z-30 fixed top-0 left-0 bg-black bg-opacity-60 backdrop-blur-lg not-open duration-500 p-40">
-				<div class="w-full h-full flex flex-row items-center justify-between">
+			<div id="menu" class="w-screen h-screen z-30 fixed top-0 left-0 bg-black bg-opacity-60 backdrop-blur-lg not-open duration-500 p-10 sm:p-20 xl:p-40 text-sm sm:text-base xl:text-lg">
+				<div class="w-full h-full flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-8 sm:gap-20 lg:gap-0">
 					<?php foreach ($menu_items as $m) : ?>
-						<a href="<?= get_permalink($m->object_id) ?>" class="menu-a border-[1px] border-white w-1/4 aspect-[1/1] flex items-center justify-center relative text-white duration-300">
-							<div class="menu-a-image w-3/4 aspect-[1/1] absolute top-0 right-0 -translate-y-20 translate-x-20 z-40 bg-center bg-cover duration-700 opacity-0" style="background-image:url('<?= $imagenes_menu[$contador] ?>')"></div>
+						<a href="<?= get_permalink($m->object_id) ?>" class="menu-a border-[1px] border-white w-1/2 sm:w-1/3 lg:w-1/4 aspect-[1/1] flex items-center justify-center relative text-white duration-300">
+							<div class="menu-a-image w-3/4 aspect-[1/1] absolute top-0 right-0 hidden sm:flex  -translate-y-10 lg:-translate-y-20 translate-x-10 lg:translate-x-20 z-40 bg-center bg-cover duration-700 lg:opacity-0" style="background-image:url('<?= $imagenes_menu[$contador] ?>')"></div>
 
-							<div class="menu-a-border border-[1px] border-white border-opacity-70 w-3/5 h-3/5 z-50 absolute duration-300 opacity-0"></div>
+							<div class="menu-a-border border-[1px] border-white border-opacity-70 w-3/5 h-3/5 z-50 absolute duration-300 lg:opacity-0"></div>
 
-							<div class="menu-a-title absolute bottom-4 right-8 uppercase text-lg duration-300"><?= $m->title ?></div>
+							<div class="menu-a-title absolute bottom-2 xl:bottom-4 right-2 sm:right-8 uppercase duration-300"><?= $m->title ?></div>
 
 						</a>
 
@@ -68,7 +68,7 @@ $contador = 0;
 					<?php endforeach; ?>
 				</div>
 
-				<div class="absolute bottom-10 left-10 text-start flex flex-row gap-10 w-full uppercase text-white">
+				<div class="absolute bottom-8 sm:bottom-10 left-8  sm:left-10 text-start flex flex-row gap-10 w-full uppercase text-white">
 					<a class="duration-300 hover:font-agencyfb" href="<?= $instagram["url"] ?>" target="_blank">Instagram</a>
 					<a class="duration-300 hover:font-agencyfb" href="<?= $linkedin["url"] ?>" target="_blank">Linkedin</a>
 				</div>

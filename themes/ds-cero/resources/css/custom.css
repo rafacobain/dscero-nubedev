@@ -117,3 +117,11 @@ form{
         @apply bg-black;
     }
 }
+
+.scrolled{
+    @apply bg-black sm:bg-transparent bg-opacity-25 sm:bg-opacity-0 backdrop-blur-xl sm:backdrop-blur-none shadow-xl sm:shadow-none;
+}
+
+#legal ul{
+    @apply flex flex-col items-center justify-center text-center gap-4 font-agencyfb uppercase;
+}

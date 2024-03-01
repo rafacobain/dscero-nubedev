@@ -1,5 +1,6 @@
 <?php
 $logo = ds_cero_asset("images/logo_white_big.svg");
+$kitDigital = ds_cero_asset("images/kit-digital.jpg");
 
 $correo = get_field("correo_electronico", "options");
 $movil = get_field("telefono_movil", "options");
@@ -10,11 +11,11 @@ $linkedin = get_field("linkedin", "options");
 
 
 $args = array(
-    'post_type'      => 'proyecto',  // Especifica el slug del tipo de contenido personalizado
-    'posts_per_page' => -1,          // -1 para traer todos los posts
-    'post_status'    => 'publish',   // Solo los posts publicados
-    'orderby'        => 'title',     // Ordenar los resultados por el título del post
-    'order'          => 'ASC'        // Orden ascendente, de la A a la Z
+	'post_type'      => 'proyecto',  // Especifica el slug del tipo de contenido personalizado
+	'posts_per_page' => -1,          // -1 para traer todos los posts
+	'post_status'    => 'publish',   // Solo los posts publicados
+	'orderby'        => 'title',     // Ordenar los resultados por el título del post
+	'order'          => 'ASC'        // Orden ascendente, de la A a la Z
 );
 $proyectos_query = new WP_Query($args);
 
@@ -92,6 +93,25 @@ $proyectos_query = new WP_Query($args);
 			<span>EN</span>
 		</div>
 	</div>
+
+	<div id="legal">
+		<?php
+		wp_nav_menu(
+			array(
+				'theme_location' => 'legal',
+				'menu_class' => 'menu',
+			)
+		);
+		?>
+	</div>
+
+	<div class="flex items-center justify-center font-agencyfb uppercase">
+		<?php if (is_front_page()) : ?>
+			<a target="_blank" href="https://nubeseo.es/">Desarrollo web por <span class="underline">NubeSEO</span></a>
+		<?php endif; ?>
+	</div>
+	
+	<img src="<?= $kitDigital ?>" class="w-4/5 sm:w-1/2 lg:w-1/3">
 </footer>
 
 </div>
