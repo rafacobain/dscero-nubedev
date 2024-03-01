@@ -23,6 +23,7 @@ __webpack_require__.r(__webpack_exports__);
 // Navigation toggle
 window.addEventListener('load', function () {
   (0,_header_behaviour__WEBPACK_IMPORTED_MODULE_1__.headerBehaviour)();
+  (0,_header_behaviour__WEBPACK_IMPORTED_MODULE_1__.openMenu)();
   try {
     (0,_parallax__WEBPACK_IMPORTED_MODULE_2__.heroParallax)();
   } catch (_unused) {}
@@ -248,7 +249,8 @@ var animarDivHomeHero = function animarDivHomeHero() {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   headerBehaviour: () => (/* binding */ headerBehaviour)
+/* harmony export */   headerBehaviour: () => (/* binding */ headerBehaviour),
+/* harmony export */   openMenu: () => (/* binding */ openMenu)
 /* harmony export */ });
 var headerBehaviour = function headerBehaviour() {
   var header = document.querySelector("header");
@@ -259,7 +261,6 @@ var headerBehaviour = function headerBehaviour() {
   } else {
     header.classList.remove(classToAdd);
   }
-  openMenu();
 };
 var openMenu = function openMenu() {
   var boton = document.querySelector("#menu-button");

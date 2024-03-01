@@ -1,5 +1,5 @@
 import { addInvertedClass, animateImageBlock, animateShowFade, animateText, precarga } from "./gsap";
-import { headerBehaviour } from "./header-behaviour";
+import { headerBehaviour, openMenu } from "./header-behaviour";
 import { heroParallax } from "./parallax";
 import { swiperProyecto } from "./swiper";
 import { homePortfolio } from "./homePortfolio";
@@ -7,6 +7,8 @@ import { homePortfolio } from "./homePortfolio";
 // Navigation toggle
 window.addEventListener('load', function () {
     headerBehaviour();
+
+    openMenu();
 
 
     try {

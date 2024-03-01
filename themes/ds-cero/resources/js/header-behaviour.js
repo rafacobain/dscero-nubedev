@@ -8,11 +8,9 @@ export const headerBehaviour = () => {
     } else {
         header.classList.remove(classToAdd);
     }
-
-    openMenu();
 }
 
-const openMenu = () => {
+export const openMenu = () => {
     const boton = document.querySelector("#menu-button");
     const div = document.querySelector("#menu");
 
