@@ -1,9 +1,10 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
 // Registra los plugins
-gsap.registerPlugin(ScrollTrigger, SplitText);
+gsap.registerPlugin(ScrollTrigger, SplitText, ScrollToPlugin);
 
 // Función para animar el texto
 export const animateText = (id) => {
@@ -110,7 +111,14 @@ export const precarga = () => {
     const porcentajeElement = document.getElementById('porcentaje');
 
     if (porcentajeElement != null) {
-        window.scrollTo(0, 0);
+        if (navigator.userAgent.indexOf("Firefox") > -1) {
+            document.documentElement.style.scrollBehavior = "auto";
+        }
+        
+
+        window.scrollTo(0,0);
+        gsap.to(window, {duration: 0, scrollTo: 0});
+
         document.body.style.overflow = 'hidden';
 
         // Incrementa el porcentaje de 0 a 100

@@ -8,6 +8,10 @@
     src: url('../../fonts/Jost.ttf');
 }
 
+:root {
+    scroll-behavior: smooth;
+}
+
 article > *:not(.entry-content),
 .entry-content > * {
     @apply mx-auto max-w-content;
@@ -119,7 +123,7 @@ form{
 }
 
 .scrolled{
-    @apply bg-black sm:bg-transparent bg-opacity-25 sm:bg-opacity-0 backdrop-blur-xl sm:backdrop-blur-none shadow-xl sm:shadow-none;
+    @apply bg-black sm:bg-transparent bg-opacity-25 sm:bg-opacity-0 shadow-xl sm:shadow-none;
 }
 
 #legal ul{

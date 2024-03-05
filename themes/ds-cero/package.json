@@ -33,6 +33,7 @@
 	},
 	"dependencies": {
 		"gsap": "file:gsap-bonus.tgz",
+		"jquery": "^3.7.1",
 		"swiper": "^11.0.6"
 	}
 }

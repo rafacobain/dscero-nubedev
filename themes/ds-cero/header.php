@@ -37,7 +37,7 @@ $contador = 0;
 
 		<?php do_action('ds_cero_header'); ?>
 
-		<header class="fixed w-screen top-0 px-10 py-4 sm:py-8 flex flex-row items-center justify-between z-40 duration-300">
+		<header class="fixed w-full top-0 px-10 py-4 sm:py-8 flex flex-row items-center justify-between z-40 duration-300">
 			<a class="z-40 relative" href="<?= get_home_url() ?>">
 				<img src="<?= $logo ?>" class="blanca w-20 xl:w-28 duration-300">
 				
@@ -52,7 +52,7 @@ $contador = 0;
 			</button>
 
 
-			<div id="menu" class="w-screen h-screen z-30 fixed top-0 left-0 bg-black bg-opacity-60 backdrop-blur-lg not-open duration-500 p-10 sm:p-20 xl:p-40 text-sm sm:text-base xl:text-lg">
+			<div id="menu" class="w-full h-screen z-30 fixed top-0 left-0 bg-black bg-opacity-60 backdrop-blur-lg not-open duration-500 p-10 sm:p-20 xl:p-40 text-sm sm:text-base xl:text-lg">
 				<div class="w-full h-full flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-8 sm:gap-20 lg:gap-0">
 					<?php foreach ($menu_items as $m) : ?>
 						<a href="<?= get_permalink($m->object_id) ?>" class="menu-a border-[1px] border-white w-1/2 sm:w-1/3 lg:w-1/4 aspect-[1/1] flex items-center justify-center relative text-white duration-300">

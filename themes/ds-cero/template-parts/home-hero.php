@@ -6,7 +6,7 @@ $boton_hero = get_field("boton_hero");
 
 ?>
 
-<section id="section-parallax" class="w-screen h-screen flex items-center justify-center relative overflow-hidden">
+<section id="section-parallax" class="w-full h-screen flex items-center justify-center relative overflow-hidden">
     <div id="parallax-bg-hero" class="absolute bg-white w-[110vw] h-[110vh] -z-10 bg-center bg-cover" style="background-image:url('<?= $imagen_hero ?>')"></div>
 
     <div class="aspect-[1/1] p-6 xl:p-8 bg-black bg-opacity-60 w-80 xl:w-96 2xl:w-[28rem] text-white duration-300 hover:bg-opacity-70 hover:backdrop-blur-xl hover:shadow-xl z-0">

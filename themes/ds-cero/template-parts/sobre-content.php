@@ -12,7 +12,7 @@ $texto_enlace = get_field("texto_enlace");
 $boton_enlace = get_field("boton_enlace");
 ?>
 
-<section class="w-screen flex flex-col items-center justify-center gap-20 px-10 lg:px-20 2xl:px-40 py-10 lg:py-20 fondo-blanco overflow-x-hidden">
+<section class="w-full flex flex-col items-center justify-center gap-20 px-10 lg:px-20 2xl:px-40 py-10 lg:py-20 fondo-blanco overflow-x-hidden">
 
     <div class="w-full flex flex-col-reverse xl:flex-row-reverse items-center xl:items-end justify-center xl:justify-end gap-10 2xl:gap-20">
         <div id="sobre-imageblock-1" class="w-3/4 xl:w-1/2 flex flex-col sm:flex-row items-center justify-center gap-10 xl:gap-0">

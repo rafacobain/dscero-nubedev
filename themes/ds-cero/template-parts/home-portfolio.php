@@ -24,7 +24,7 @@ $tamanoHover = $tamanoBoton * 2;
     }
 </style>
 
-<section class="flex flex-row items-center justify-center w-screen h-[500px] xl:h-[600px] 2xl:h-[750px] relative">
+<section class="flex flex-row items-center justify-center w-full h-[500px] xl:h-[600px] 2xl:h-[750px] relative">
     <?php foreach ($acordeon as $a) : ?>
         <button class="boton-portfolio btn-port w-0 h-full bg-center bg-cover duration-300" data-title="<?= $a->post_title ?>" data-subtitle="<?= get_field("subtitulo", $a->ID)?>" data-link="<?= get_permalink($a->ID) ?>" style="background-image:url('<?= get_field("imagen_principal", $a->ID)["url"] ?>');">
         </button>

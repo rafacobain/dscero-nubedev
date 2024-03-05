@@ -11,7 +11,7 @@ $proyectos_query = new WP_Query($args);
 ?>
 
 
-<section class="px-6 sm:px-60 lg:px-24 xl:px-32 pt-10 xl:pt-20 pb-40 min-h-screen grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-x-32 xl:gap-x-40 gap-y-40 xl:gap-y-52 w-screen fondo-blanco">
+<section class="px-6 sm:px-60 lg:px-24 xl:px-32 pt-10 xl:pt-20 pb-40 min-h-screen grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-x-32 xl:gap-x-40 gap-y-40 xl:gap-y-52 w-full fondo-blanco">
     <?php
     if ($proyectos_query->have_posts()) :
         // Bucle para recorrer los posts encontrados
