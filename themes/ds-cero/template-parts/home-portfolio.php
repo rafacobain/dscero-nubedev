@@ -41,9 +41,9 @@ $tamanoHover = $tamanoBoton * 2;
         </div>
 
         <div class="w-full h-full flex items-center justify-center">
-            <div class="aspect-[1/1]  bg-black bg-opacity-60 p-6 xl:p-8 w-80 xl:w-96 2xl:w-[28rem] text-white duration-300 hover:bg-opacity-70 hover:backdrop-blur-xl hover:shadow-xl">
-                <div class="border-[1px] border-white w-full h-full p-6 xl:p-8 xl:pl-10 2xl:pl-14 flex flex-col items-end justify-center gap-8 2xl:gap-10 text-end">
-                    <p id="title-port" class="font-agencyfb text-lg sm:text-xl 2xl:text-2xl uppercase font-bold"></p>
+            <div class="aspect-[1/1]  bg-black bg-opacity-60 w-80 xl:w-96 2xl:w-[25rem] text-white duration-300 hover:bg-opacity-70 hover:backdrop-blur-xl hover:shadow-xl">
+                <div class=" w-full h-full p-6 xl:p-8 xl:pl-10 2xl:pl-14 flex flex-col items-end justify-center gap-8 2xl:gap-10 text-end">
+                    <p id="title-port" class="font-semibold text-lg sm:text-xl 2xl:text-2xl uppercase font-bold"></p>
                     <div id="text-port" class="text-xs xl:text-sm 2xl:text-base uppercase"></div>
                     <a id="link-port" class="mt-auto py-1 xl:py-2 px-2 xl:px-4 border-[1px] border-white uppercase duration-300 hover:bg-white hover:text-black text-xs sm:text-sm xl:text-base" href="#">VER PROYECTO</a>
                 </div>

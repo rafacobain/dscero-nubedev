@@ -16,7 +16,7 @@ $imagenes = get_field("imagenes");
     </div>
 
     <div class="w-full h-2/6 sm:h-1/5 flex flex-row items-center justify-between px-4 sm:px-20 xl:px-40">
-        <h1 class="text-start text-2xl sm:text-3xl xl:text-4xl 2xl:text-5xl font-agencyfb font-semibold"><?= $objeto->post_title ?></h1>
+        <h1 class="text-start text-2xl sm:text-3xl xl:text-4xl 2xl:text-5xl font-semibold"><?= $objeto->post_title ?></h1>
 
         <div class="flex flex-row items-center justify-center gap-4 sm:gap-10">
             <button class="swiper-proyecto-prev">

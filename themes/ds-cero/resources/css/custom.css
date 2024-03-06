@@ -87,7 +87,7 @@ html{
     }
 
     .menu-a-title{
-        @apply font-agencyfb;
+        @apply font-semibold;
     }
 }
 
@@ -127,5 +127,5 @@ form{
 }
 
 #legal ul{
-    @apply flex flex-col items-center justify-center text-center gap-4 font-agencyfb uppercase;
+    @apply flex flex-col items-center justify-center text-center gap-4 font-semibold uppercase;
 }

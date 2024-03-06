@@ -2,9 +2,9 @@
 $args = array(
     'post_type'      => 'proyecto',  // Especifica el slug del tipo de contenido personalizado
     'posts_per_page' => -1,          // -1 para traer todos los posts
-    'post_status'    => 'publish',   // Solo los posts publicados
-    'orderby'        => 'title',     // Ordenar los resultados por el título del post
-    'order'          => 'ASC'        // Orden ascendente, de la A a la Z
+    'post_status'    => 'publish',
+    'orderby'        => 'menu_order',
+    'order'          => 'ASC',     // Orden ascendente, de la A a la Z
 );
 $proyectos_query = new WP_Query($args);
 
@@ -18,9 +18,9 @@ $proyectos_query = new WP_Query($args);
         while ($proyectos_query->have_posts()) :
             $proyectos_query->the_post(); ?>
 
-            <a href="<?= get_the_permalink(); ?>" class="aspect-[1/1] p-6 xl:p-8 bg-black bg-opacity-60 w-full text-white duration-300 hover:bg-opacity-70 hover:backdrop-blur-xl hover:shadow-xl relative">
+            <a href="<?= get_the_permalink(); ?>" class="aspect-[1/1] bg-black bg-opacity-60 w-full text-white duration-300 hover:bg-opacity-70 hover:backdrop-blur-xl hover:shadow-xl relative">
                 <div class="border-[1px] border-white w-full h-full p-8 pl-12 flex flex-col items-end justify-center gap-10 text-end">
-                    <p class="font-agencyfb text-lg sm:text-xl 2xl:text-2xl uppercase font-bold"><?= get_the_title(); ?></p>
+                    <p class="font-semibold text-lg sm:text-xl 2xl:text-2xl uppercase"><?= get_the_title(); ?></p>
                     <div class="text-xs xl:text-sm 2xl:text-base uppercase"><?= get_field("subtitulo", get_the_ID()) ?></div>
                     <div class="mt-auto py-1 xl:py-2 px-2 xl:px-4 border-[1px] border-white uppercase duration-300 hover:bg-white hover:text-black"><?= __("VER MÁS", "dscero") ?></div>
                 </div>

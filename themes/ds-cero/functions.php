@@ -166,7 +166,8 @@ function crear_custom_post_type_proyecto() {
         'has_archive'         => true,
         'hierarchical'        => false,
         'menu_position'       => 5,
-        'supports'            => array( 'title', 'editor', 'thumbnail', 'excerpt', 'custom-fields', 'comments' )
+		'supports'            => array( 'title', 'editor', 'thumbnail', 'excerpt', 'custom-fields', 'comments', 'page-attributes' ), // Añadir page-attributes aquí
+    
     );
 
     register_post_type( 'proyecto', $args );

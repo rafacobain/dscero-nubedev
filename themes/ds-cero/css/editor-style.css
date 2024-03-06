@@ -148,6 +148,9 @@
 .aspect-\[9\/16\] {
     aspect-ratio: 9/16
 }
+.aspect-\[3\/4\] {
+    aspect-ratio: 3/4
+}
 .h-1 {
     height: 0.25rem
 }
@@ -224,8 +227,8 @@
 .w-full {
     width: 100%
 }
-.w-screen {
-    width: 100vw
+.w-4 {
+    width: 1rem
 }
 .max-w-sm {
     max-width: 24rem
@@ -554,6 +557,12 @@
 .opacity-0 {
     opacity: 0
 }
+.opacity-100 {
+    opacity: 1
+}
+.opacity-80 {
+    opacity: 0.8
+}
 .shadow-xl {
     --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
     --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
@@ -561,6 +570,11 @@
 }
 .backdrop-blur-lg {
     --tw-backdrop-blur: blur(16px);
+    -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+            backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)
+}
+.backdrop-blur-xl {
+    --tw-backdrop-blur: blur(24px);
     -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
             backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)
 }
@@ -656,6 +670,9 @@ body {
 .hover\:font-agencyfb:hover {
     font-family: AgencyFB, sans-serif
 }
+.hover\:font-semibold:hover {
+    font-weight: 600
+}
 .hover\:text-black:hover {
     --tw-text-opacity: 1;
     color: rgb(0 0 0 / var(--tw-text-opacity))
@@ -674,6 +691,11 @@ body {
     -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
             backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)
 }
+.hover\:backdrop-blur-none:hover {
+    --tw-backdrop-blur: blur(0);
+    -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+            backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)
+}
 @media (min-width: 600px) {
     .sm\:absolute {
         position: absolute
@@ -689,6 +711,9 @@ body {
     }
     .sm\:flex {
         display: flex
+    }
+    .sm\:aspect-\[9\/16\] {
+        aspect-ratio: 9/16
     }
     .sm\:h-1\/5 {
         height: 20%
@@ -722,6 +747,12 @@ body {
     }
     .sm\:w-3\/5 {
         width: 60%
+    }
+    .sm\:w-1\/6 {
+        width: 16.666667%
+    }
+    .sm\:w-6 {
+        width: 1.5rem
     }
     .sm\:-translate-x-20 {
         --tw-translate-x: -5rem;
@@ -868,6 +899,17 @@ body {
     .lg\:opacity-0 {
         opacity: 0
     }
+    .lg\:opacity-40 {
+        opacity: 0.4
+    }
+    .lg\:opacity-60 {
+        opacity: 0.6
+    }
+    .lg\:backdrop-blur-xl {
+        --tw-backdrop-blur: blur(24px);
+        -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+                backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)
+    }
 }
 @media (min-width: 1280px) {
     .xl\:bottom-4 {
@@ -890,6 +932,12 @@ body {
     }
     .xl\:w-96 {
         width: 24rem
+    }
+    .xl\:w-80 {
+        width: 20rem
+    }
+    .xl\:w-1\/5 {
+        width: 20%
     }
     .xl\:-translate-x-4 {
         --tw-translate-x: -1rem;
@@ -990,6 +1038,9 @@ body {
     }
     .\32xl\:w-\[28rem\] {
         width: 28rem
+    }
+    .\32xl\:w-\[25rem\] {
+        width: 25rem
     }
     .\32xl\:grid-cols-3 {
         grid-template-columns: repeat(3, minmax(0, 1fr))

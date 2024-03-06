@@ -13,9 +13,9 @@ $linkedin = get_field("linkedin", "options");
 $args = array(
 	'post_type'      => 'proyecto',  // Especifica el slug del tipo de contenido personalizado
 	'posts_per_page' => -1,          // -1 para traer todos los posts
-	'post_status'    => 'publish',   // Solo los posts publicados
-	'orderby'        => 'title',     // Ordenar los resultados por el título del post
-	'order'          => 'ASC'        // Orden ascendente, de la A a la Z
+	'post_status'    => 'publish',   // Solo los posts publicados,
+    'orderby'        => 'menu_order',
+    'order'          => 'ASC',
 );
 $proyectos_query = new WP_Query($args);
 
@@ -36,7 +36,7 @@ $proyectos_query = new WP_Query($args);
 	<img src="<?= $logo ?>" class="w-1/6 sm:w-1/12">
 
 	<div class="w-full gap-10 flex flex-row justify-center">
-		<div class="text-end font-agencyfb w-full text-xl">
+		<div class="text-end font-semibold w-full text-xl">
 			<a href="<?= __("/proyectos/", "dscero") ?>"><?= __("PROYECTOS", "dscero") ?></a>
 		</div>
 		<div class="text-start flex flex-col gap-4 w-full uppercase">
@@ -56,7 +56,7 @@ $proyectos_query = new WP_Query($args);
 	</div>
 
 	<div class="w-full gap-10 flex flex-row justify-center">
-		<div class="text-end font-agencyfb w-full text-xl">
+		<div class="text-end font-semibold w-full text-xl">
 			<a href="<?= __("/sobre-nosotros/", "dscero") ?>"><?= __("SOBRE NOSOTROS", "dscero") ?></a>
 		</div>
 		<div class="text-start flex flex-col gap-4 w-full">
@@ -64,7 +64,7 @@ $proyectos_query = new WP_Query($args);
 	</div>
 
 	<div class="w-full gap-10 flex flex-row justify-center">
-		<div class="text-end font-agencyfb w-full text-xl">
+		<div class="text-end font-semibold w-full text-xl">
 			<a href="<?= __("/contacto/", "dscero") ?>"><?= __("CONTACTO", "dscero") ?></a>
 		</div>
 		<div class="text-start flex flex-col gap-4 w-full uppercase">
@@ -75,7 +75,7 @@ $proyectos_query = new WP_Query($args);
 	</div>
 
 	<div class="w-full gap-10 flex flex-row justify-center">
-		<div class="text-end font-agencyfb w-full text-xl">
+		<div class="text-end font-semibold w-full text-xl">
 			<span><?= __("REDES SOCIALES", "dscero") ?></span>
 		</div>
 		<div class="text-start flex flex-col gap-4 w-full uppercase">
@@ -85,7 +85,7 @@ $proyectos_query = new WP_Query($args);
 	</div>
 
 	<div class="w-full gap-10 flex flex-row justify-center">
-		<div class="text-end font-agencyfb w-full text-xl">
+		<div class="text-end font-semibold w-full text-xl">
 			<span><?= __("ESCÓGE TU IDIOMA", "dscero") ?></span>
 		</div>
 		<div class="text-start flex flex-col gap-4 w-full">
@@ -105,7 +105,7 @@ $proyectos_query = new WP_Query($args);
 		?>
 	</div>
 
-	<div class="flex items-center justify-center font-agencyfb uppercase">
+	<div class="flex items-center justify-center font-semibold uppercase">
 		<?php if (is_front_page()) : ?>
 			<a target="_blank" href="https://nubeseo.es/">Desarrollo web por <span class="underline">NubeSEO</span></a>
 		<?php endif; ?>
