@@ -127,7 +127,7 @@ form{
 }
 
 #legal ul{
-    @apply flex flex-col items-center justify-center text-center gap-4 font-semibold uppercase;
+    @apply flex flex-col sm:flex-row items-center justify-center text-center gap-4 sm:gap-10 lg:gap-20 uppercase;
 }
 
 .grid-a{

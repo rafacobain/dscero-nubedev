@@ -747,6 +747,9 @@ video {
 .flex-col-reverse{
     flex-direction: column-reverse;
 }
+.flex-wrap{
+    flex-wrap: wrap;
+}
 .items-start{
     align-items: flex-start;
 }
@@ -1229,8 +1232,20 @@ form input[type="submit"]:hover{
     justify-content: center;
     gap: 1rem;
     text-align: center;
-    font-weight: 600;
     text-transform: uppercase;
+}
+@media (min-width: 600px){
+
+    #legal ul{
+        flex-direction: row;
+        gap: 2.5rem;
+    }
+}
+@media (min-width: 960px){
+
+    #legal ul{
+        gap: 5rem;
+    }
 }
 .grid-a:hover{
     --tw-bg-opacity: 0.7;
@@ -1410,10 +1425,6 @@ form input[type="submit"]:hover{
         text-align: start;
     }
 
-    .sm\:text-end{
-        text-align: end;
-    }
-
     .sm\:text-3xl{
         font-size: 1.875rem;
         line-height: 2.25rem;
@@ -1424,6 +1435,11 @@ form input[type="submit"]:hover{
         line-height: 1.5rem;
     }
 
+    .sm\:text-lg{
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+    }
+
     .sm\:text-sm{
         font-size: 0.875rem;
         line-height: 1.25rem;
@@ -1431,11 +1447,6 @@ form input[type="submit"]:hover{
 
     .sm\:text-xl{
         font-size: 1.25rem;
-    }
-
-    .sm\:text-lg{
-        font-size: 1.125rem;
-        line-height: 1.75rem;
     }
 }
 @media (min-width: 782px){
@@ -1460,10 +1471,6 @@ form input[type="submit"]:hover{
 }
 @media (min-width: 960px){
 
-    .lg\:min-h-screen{
-        min-height: 100vh;
-    }
-
     .lg\:w-1\/2{
         width: 50%;
     }
@@ -1476,12 +1483,20 @@ form input[type="submit"]:hover{
         width: 25%;
     }
 
+    .lg\:w-1\/5{
+        width: 20%;
+    }
+
     .lg\:grid-cols-2{
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .lg\:flex-row{
         flex-direction: row;
+    }
+
+    .lg\:flex-nowrap{
+        flex-wrap: nowrap;
     }
 
     .lg\:justify-between{
@@ -1492,6 +1507,10 @@ form input[type="submit"]:hover{
         gap: 0px;
     }
 
+    .lg\:gap-10{
+        gap: 2.5rem;
+    }
+
     .lg\:gap-20{
         gap: 5rem;
     }
@@ -1499,11 +1518,6 @@ form input[type="submit"]:hover{
     .lg\:px-20{
         padding-left: 5rem;
         padding-right: 5rem;
-    }
-
-    .lg\:px-24{
-        padding-left: 6rem;
-        padding-right: 6rem;
     }
 
     .lg\:px-40{
@@ -1516,6 +1530,10 @@ form input[type="submit"]:hover{
         padding-bottom: 5rem;
     }
 
+    .lg\:text-start{
+        text-align: start;
+    }
+
     .lg\:text-5xl{
         font-size: 3rem;
         line-height: 1;
@@ -1524,6 +1542,10 @@ form input[type="submit"]:hover{
     .lg\:text-lg{
         font-size: 1.125rem;
         line-height: 1.75rem;
+    }
+
+    .lg\:text-xl{
+        font-size: 1.25rem;
     }
 
     .lg\:opacity-60{
@@ -1574,12 +1596,8 @@ form input[type="submit"]:hover{
         flex-direction: row-reverse;
     }
 
-    .xl\:items-end{
-        align-items: flex-end;
-    }
-
-    .xl\:justify-end{
-        justify-content: flex-end;
+    .xl\:gap-20{
+        gap: 5rem;
     }
 
     .xl\:p-20{
@@ -1592,11 +1610,6 @@ form input[type="submit"]:hover{
 
     .xl\:p-8{
         padding: 2rem;
-    }
-
-    .xl\:px-32{
-        padding-left: 8rem;
-        padding-right: 8rem;
     }
 
     .xl\:px-4{
