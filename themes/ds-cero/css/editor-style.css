@@ -209,12 +209,6 @@
 .w-full {
     width: 100%
 }
-.w-1\/5 {
-    width: 20%
-}
-.w-1\/4 {
-    width: 25%
-}
 .max-w-sm {
     max-width: 24rem
 }
@@ -773,9 +767,6 @@ body {
     }
 }
 @media (min-width: 960px) {
-    .lg\:min-h-screen {
-        min-height: 100vh
-    }
     .lg\:w-1\/2 {
         width: 50%
     }
@@ -803,11 +794,11 @@ body {
     .lg\:gap-0 {
         gap: 0px
     }
-    .lg\:gap-20 {
-        gap: 5rem
-    }
     .lg\:gap-10 {
         gap: 2.5rem
+    }
+    .lg\:gap-20 {
+        gap: 5rem
     }
     .lg\:px-20 {
         padding-left: 5rem;
