@@ -89,7 +89,7 @@ gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPAC
 var animateText = function animateText(id) {
   // Divide el texto del elemento #homehero-texto en caracteres
   var mySplitText = new gsap_SplitText__WEBPACK_IMPORTED_MODULE_2__.SplitText(id, {
-    type: "chars"
+    type: "chars, words"
   });
   // Obtiene los caracteres divididos
   var chars = mySplitText.chars;
@@ -111,7 +111,7 @@ var animateText = function animateText(id) {
   tl.to(chars, {
     opacity: 1,
     // Hace cada letra visible
-    stagger: 0.025 // Tiempo entre la aparición de cada letra
+    stagger: 0.02 // Tiempo entre la aparición de cada letra
     // Puedes añadir más propiedades de animación si lo deseas
   });
 };

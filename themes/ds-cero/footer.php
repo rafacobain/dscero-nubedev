@@ -68,7 +68,7 @@ $proyectos_query = new WP_Query($args);
 			<a href="<?= __("/contacto/", "dscero") ?>"><?= __("CONTACTO", "dscero") ?></a>
 		</div>
 		<div class="text-start flex flex-col gap-4 w-full uppercase">
-			<a href="<?= $correo["url"] ?>"><?= $correo["title"] ?></a>
+			<a class="lowercase" href="<?= $correo["url"] ?>"><?= $correo["title"] ?></a>
 			<a href="<?= $fijo["url"] ?>">T.: <?= $fijo["title"] ?></a>
 			<a href="<?= $movil["url"] ?>">M.: <?= $movil["title"] ?></a>
 		</div>

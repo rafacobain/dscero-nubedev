@@ -9,7 +9,9 @@ gsap.registerPlugin(ScrollTrigger, SplitText, ScrollToPlugin);
 // Función para animar el texto
 export const animateText = (id) => {
     // Divide el texto del elemento #homehero-texto en caracteres
-    const mySplitText = new SplitText(id, { type: "chars" });
+    const mySplitText = new SplitText(id, { 
+        type: "chars, words",
+     });
     // Obtiene los caracteres divididos
     const chars = mySplitText.chars;
     // Crea una timeline de GSAP para la animación
@@ -26,7 +28,7 @@ export const animateText = (id) => {
     gsap.set(chars, { opacity: 0 });
     tl.to(chars, {
         opacity: 1, // Hace cada letra visible
-        stagger: 0.025, // Tiempo entre la aparición de cada letra
+        stagger: 0.02, // Tiempo entre la aparición de cada letra
         // Puedes añadir más propiedades de animación si lo deseas
     });
 }

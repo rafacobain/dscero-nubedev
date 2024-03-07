@@ -129,3 +129,11 @@ form{
 #legal ul{
     @apply flex flex-col items-center justify-center text-center gap-4 font-semibold uppercase;
 }
+
+.grid-a{
+    @apply hover:bg-opacity-70 hover:backdrop-blur-xl hover:shadow-xl;
+}
+
+.grid-a:hover .backdrop-a{
+    @apply backdrop-blur-none;
+}
